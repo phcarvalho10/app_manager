@@ -1,0 +1,26 @@
+<div class="page-header text-center">
+	<h2>{{action}} Versions</h2>
+</div>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+<div class="row">
+	<form ng-submit="merge()">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Application</label>
+				<select name="application" ng-model="version.application_id" 
+				ng-options="application.id as application.name for application in applicationCollection" 
+				class="form-control">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>Version</label>
+				<input type="number" step="0.1" name="version" value="1.0" ng-model="version.version" class="form-control">
+			</div>
+			<button type="submit" class="btn btn-primary">{{action}}</button>
+			<a href="workspace/manager/public/#/version" class="btn btn-primary">Back</a>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</form>
+</div>

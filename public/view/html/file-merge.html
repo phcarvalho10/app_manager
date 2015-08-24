@@ -1,0 +1,21 @@
+<div class="page-header text-center">
+	<h2>{{action}} Files</h2>
+</div>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+<div class="row">
+	<form ng-submit="merge()">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" ng-model="file.name" class="form-control">
+			</div>
+			<div ng-show="{{isCreate}}" class="form-group">
+				<input type="file" file-model="myFile"/>
+			</div>
+			<button type="submit" class="btn btn-primary">{{action}}</button>
+			<a href="workspace/manager/public/#/file" class="btn btn-primary">Back</a>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</form>
+</div>

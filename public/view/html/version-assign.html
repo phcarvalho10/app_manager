@@ -1,0 +1,50 @@
+<div class="page-header text-center">
+	<h2>Version Files</h2>
+</div>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+<div class="row">
+	<div class="form-group">
+		<label>Application</label>
+		<input type="text" name="application" ng-model="application.name" disabled class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Version</label>
+		<input type="text" name="version" ng-model="version.version" disabled class="form-control">
+	</div>
+	<div class="page-header text-center">
+		<h3>Assign File</h3>
+	</div>
+	<form ng-submit="assignFile()">
+		<div class="col-md-12">
+			<input type="hidden" name="_method" value="PATCH">
+			<div class="form-group">
+				<label>File</label>
+				<select name="file" ng-model="fileId" 
+				ng-options="file.id as file.name for file in fileCollection" 
+				class="form-control">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">Assign</button>
+			<a href="workspace/manager/public/#/version" class="btn btn-primary">Back</a>
+		</div>
+	</form>
+</div>
+<br>
+<div class="row">
+	<div class="page-header text-center">
+		<h3>Files</h3>
+	</div>
+	<div class="col-md-12">
+		<table class="table table-striped">
+		  <tr>
+		    <th>Name</th>
+		    <th>Source</th>
+		  </tr>
+		  <tr ng-repeat="currentFile in currentFileCollection">
+		    <td>{{currentFile.name}}</td>
+		    <td>{{currentFile.source}}</td>
+		  </tr>
+		</table>
+	</div>
+</div>

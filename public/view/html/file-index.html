@@ -1,0 +1,32 @@
+<div class="page-header text-center">
+	<h2>Files</h2>
+</div>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+<div class="row">
+	<div class="col-md-12 text-right">
+		<a href="#/file/create" class="btn btn-primary form-control">Create</a>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-striped">
+		  <tr>
+		    <th>Id</th>
+		    <th>Application</th>
+		    <th>Version</th>
+		    <th>Name</th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		  <tr ng-repeat="file in fileCollection">
+		    <td>{{file.id}}</td>
+		    <td>{{file.application_name}}</td>
+		    <td>{{file.version}}</td>
+		    <td>{{file.name}}</td>
+		    <td><a href="#/file/edit/{{file.id}}" class="btn btn-default">Edit</a></td>
+		    <td><button ng-click="delete(file)" class="btn btn-danger">Delete</button></td>
+		  </tr>
+		</table>
+	</div>
+</div>

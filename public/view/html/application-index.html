@@ -1,0 +1,28 @@
+<div class="page-header text-center">
+	<h2>Applications</h2>
+</div>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+<div class="row">
+	<div class="col-md-12 text-right">
+		<a href="#/application/create" class="btn btn-primary form-control">Create</a>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-striped">
+		  <tr>
+		    <th>Id</th>
+		    <th>Name</th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		  <tr ng-repeat="application in applicationCollection">
+		    <td>{{application.id}}</td>
+		    <td>{{application.name}}</td>
+		    <td><a href="#/application/edit/{{application.id}}" class="btn btn-default">Edit</a></td>
+		    <td><button ng-click="delete(application)" class="btn btn-danger">Delete</button></td>
+		  </tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,53 @@
+<div class="page-header text-center">
+	<h2>Client Applications</h2>
+</div>
+<p ng-show="message.length" class="alert alert-info">{{message}}</p>
+<div class="row">
+	<div class="form-group">
+				<label>Client</label>
+				<input type="text" name="name" ng-model="client.name" disabled class="form-control">
+			</div>
+	<div class="page-header text-center">
+		<h3>Assign Application</h3>
+	</div>
+	<form ng-submit="assignApplication()">
+		<div class="col-md-12">
+			<div class="form-group">
+				<label>Application</label>
+				<select name="application" ng-model="applicationId" 
+				ng-options="application.id as application.name for application in applicationCollection" ng-change="getVersionByApplication()" 
+				class="form-control">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>Released Version</label>
+				<select name="version" ng-model="version" 
+				ng-options="version.version as version.version for version in versionApplicationCollection" 
+				class="form-control">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">Assign</button>
+			<a href="workspace/manager/public/#/client" class="btn btn-primary">Back</a>
+		</div>
+	</form>
+</div>
+<br>
+<div class="row">
+	<div class="page-header text-center">
+		<h3>Applications</h3>
+	</div>
+	<div class="col-md-12">
+		<table class="table table-striped">
+		  <tr>
+		    <th>Name</th>
+		    <th>Version</th>
+		  </tr>
+		  <tr ng-repeat="currentApplication in currentApplicationCollection">
+		    <td>{{currentApplication.name}}</td>
+		    <td>{{currentApplication.version}}</td>
+		  </tr>
+		</table>
+	</div>
+</div>
