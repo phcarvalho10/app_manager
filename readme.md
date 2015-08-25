@@ -1,4 +1,11 @@
 ----------------------------------
+Deploy em servidor
+----------------------------------
+http://appmanager.esy.es/manager/public/#/main
+
+Observação: Esse servidor oferece apenas o MySQL como opção. Logo, na listagem de versões, a coluna "released", diferente de como funciona no PostgreSQL, exibe 0 (false) ou 1(true).
+
+----------------------------------
 Exemplo de sequência de casos de uso
 ----------------------------------
 1. Usuário cadastra cliente em Clients.
