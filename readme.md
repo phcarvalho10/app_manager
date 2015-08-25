@@ -4,8 +4,8 @@ Exemplo de sequência de casos de uso
 1. Usuário cadastra cliente em Clients.
 2. Usuário cadastra aplicação em Applications.
 3. Usuário cadastra versão em Versions.
-4. Usuário cadastra arquivo em Files.
-5. Usuário atribui um ou mais arquivos para uma versão em Versions -> Assign File.
+4. Usuário cadastra um ou mais arquivos em Files.
+5. Usuário atribui um ou mais arquivos para a versão em Versions -> Assign File.
 6. Usuário libera a versão em Versions -> Relase.
 7. Usuário atribui aplicação com versão liberada para um cliente em Clients -> Assign Application.
 
