@@ -1,7 +1,7 @@
 angular.module('manager').controller('VersionMergeController', function($scope, $routeParams, versionCRUD, applicationCRUD){
 
 	var versionId = $routeParams.versionId;
-	$scope.version = {};
+	$scope.version = { version: '1.0' };
 	$scope.message = '';
 	$scope.action = 'Store';
 	
@@ -40,7 +40,7 @@ angular.module('manager').controller('VersionMergeController', function($scope, 
 		}else{
 			versionCRUD.create($scope.version)
 			.then(function(message){
-				$scope.version = {};
+				$scope.version = { version: '1.0' };
 				$scope.message = message;
 			})
 			.catch(function(errorMessage){

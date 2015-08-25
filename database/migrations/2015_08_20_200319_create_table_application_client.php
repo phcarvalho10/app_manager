@@ -17,7 +17,7 @@ class CreateTableApplicationClient extends Migration
             $table->foreign('application_id')->references('id')->on('applications')->onDelete('cascade');
             $table->integer('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
-            $table->decimal('version');
+            $table->string('version');
             $table->unique(['application_id', 'client_id', 'version']);
             
             $table->timestamps();

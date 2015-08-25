@@ -2,7 +2,7 @@ angular.module('mainService', ['ngResource'])
 .factory('oAuth2', function($resource, $q){
 
 	var oAuth2 = {};
-	var authResource = $resource('/workspace/manager/public/main/authenticate', null, {
+	var authResource = $resource('/manager/public/main/authenticate', null, {
 		authenticate: {
 			method: 'POST'
 		}

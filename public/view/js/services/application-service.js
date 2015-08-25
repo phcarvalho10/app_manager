@@ -2,7 +2,7 @@ angular.module('applicationService', ['ngResource'])
 .factory('applicationCRUD', function($resource, $q){
 	
 	var applicationCRUD = {};
-	var applicationResource = $resource('/workspace/manager/public/application/:applicationId', null, {
+	var applicationResource = $resource('/manager/public/application/:applicationId', null, {
 		update: {
 			method: 'PUT'
 		}
@@ -67,7 +67,7 @@ angular.module('applicationService', ['ngResource'])
 }).factory('applicationQuery', function($resource, $q){
 	
 	var applicationQuery = {};
-	var applicationClientResource = $resource('/workspace/manager/public/application/client/:clientId', null, {
+	var applicationClientResource = $resource('/manager/public/application/client/:clientId', null, {
 		getApplicationByClient: {
 			method: 'GET',
 			isArray: true

@@ -2,7 +2,7 @@ angular.module('versionService', ['ngResource'])
 .factory('versionCRUD', function($resource, $q){
 	
 	var versionCRUD = {};
-	var versionResource = $resource('/workspace/manager/public/version/:versionId', null, {
+	var versionResource = $resource('/manager/public/version/:versionId', null, {
 		update: {
 			method: 'PUT'
 		}
@@ -67,7 +67,7 @@ angular.module('versionService', ['ngResource'])
 }).factory('versionQuery', function($resource, $q){
 	
 	var versionQuery = {};
-	var versionApplicationResource = $resource('/workspace/manager/public/version/application/:applicationId', null, {
+	var versionApplicationResource = $resource('/manager/public/version/application/:applicationId', null, {
 		getVersionByApplication: {
 			method: 'GET',
 			isArray: true
@@ -85,7 +85,7 @@ angular.module('versionService', ['ngResource'])
 		});
 	};
 	
-	var versionAssignResource = $resource('/workspace/manager/public/version/assign/:id', null, {
+	var versionAssignResource = $resource('/manager/public/version/assign/:id', null, {
 		assignFile: {
 			method: 'PATCH'
 		},

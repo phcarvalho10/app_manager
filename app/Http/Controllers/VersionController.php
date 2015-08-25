@@ -93,11 +93,11 @@ class VersionController extends Controller
     {
     	$file = File::find($request->input('fileId'));
 
-    	if($file->version_id == NULL){
+    	if($file != NULL && $request->has($file->version_id)){
     		$file->version_id = $request->input('versionId');
     		$file->save();
     	}else{
-    		abort(500, 'Already exists a file assigned with this version!');
+    		abort(500, $file . 'This file already assigned with a version!');
     	}
     }
     

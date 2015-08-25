@@ -42,7 +42,7 @@ angular.module('manager').controller('FileMergeController', function($scope, $ro
 	
 	uploadFile = function(){
         var file = $scope.myFile;
-        var uploadUrl = "/workspace/manager/public/file/upload";
+        var uploadUrl = "file/upload";
         
         fileUpload.uploadFile(file, uploadUrl);
     };

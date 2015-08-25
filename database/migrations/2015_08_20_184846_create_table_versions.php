@@ -16,7 +16,7 @@ class CreateTableVersions extends Migration
             $table->increments('id');
             $table->integer('application_id');
             $table->foreign('application_id')->references('id')->on('applications')->onDelete('cascade');
-            $table->decimal('version');
+            $table->string('version');
             $table->boolean('is_released')->default(false);
             
             $table->timestamps();

@@ -52,7 +52,7 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-		$application = Application::find($id);
+        $application = Application::find($id);
         $application->name = $request->input('name');
         $application->save();    
     }

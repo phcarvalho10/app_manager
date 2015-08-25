@@ -16,8 +16,10 @@ class CreateTableFiles extends Migration
             $table->increments('id');
             $table->integer('version_id')->nullable();
             $table->foreign('version_id')->references('id')->on('versions')->onDelete('cascade');
-            $table->string('name');
-            $table->string('source');
+            
+            $table->string('name')->nullable();
+            $table->string('mime')->nullable();
+            $table->string('original_name')->nullable();
             
             $table->timestamps();
         });

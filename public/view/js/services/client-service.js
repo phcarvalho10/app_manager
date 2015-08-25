@@ -2,7 +2,7 @@ angular.module('clientService', ['ngResource'])
 .factory('clientCRUD', function($resource, $q){
 	
 	var clientCRUD = {};
-	var clientResource = $resource('/workspace/manager/public/client/:clientId', null, {
+	var clientResource = $resource('/manager/public/client/:clientId', null, {
 		update: {
 			method: 'PUT'
 		}
@@ -67,7 +67,7 @@ angular.module('clientService', ['ngResource'])
 }).factory('clientQuery', function($resource, $q){
 	
 	var clientQuery = {};
-	var clientAssignResource = $resource('/workspace/manager/public/client/assign', null, {
+	var clientAssignResource = $resource('/manager/public/client/assign', null, {
 		assignApplication: {
 			method: 'POST'
 		}

@@ -2,7 +2,7 @@ angular.module('fileService', ['ngResource'])
 .factory('fileCRUD', function($resource, $q){
 	
 	var fileCRUD = {};
-	var fileResource = $resource('/workspace/manager/public/file/:fileId', null, {
+	var fileResource = $resource('/manager/public/file/:fileId', null, {
 		update: {
 			method: 'PUT'
 		}
@@ -67,7 +67,7 @@ angular.module('fileService', ['ngResource'])
 }).factory('fileQuery', function($resource, $q){
 	
 	var fileQuery = {};
-	var fileVersionResource = $resource('/workspace/manager/public/file/version/:versionId', null, {
+	var fileVersionResource = $resource('/manager/public/file/version/:versionId', null, {
 		getFileByVersion: {
 			method: 'GET',
 			isArray: true

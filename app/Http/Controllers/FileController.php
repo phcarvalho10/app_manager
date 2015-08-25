@@ -17,7 +17,7 @@ class FileController extends Controller
      */
     public function index()
     {
-		$fileCollection = DB::select('SELECT DISTINCT f.id AS id, f.name AS name, v.version AS version, a.name AS application_name  FROM files AS f LEFT JOIN versions AS v ON (f.version_id = v.id) LEFT JOIN applications AS a ON (a.id = v.application_id)');
+        $fileCollection = DB::select('SELECT DISTINCT f.id AS id, f.name AS name, v.version AS version, a.name AS application_name  FROM files AS f LEFT JOIN versions AS v ON (f.version_id = v.id) LEFT JOIN applications AS a ON (a.id = v.application_id)');
     
     	return response()->json($fileCollection, 200);
     }
@@ -92,8 +92,12 @@ class FileController extends Controller
      */
     public function upload(Request $request)
     {
-    	$file = $request->file('file');
-    	$file->move(storage_path(), $request->file('name'));
-    	//$file->move('C:\Users\Paulo\Desktop\new', $request->file('name'));
+        if($request->file('file') != NULL){
+            $file = $request->file('file');
+            $file->move(storage_path(), $file->getClientOriginalName().'.'.$file->getClientOriginalExtension());
+            //$file->move('C:\Users\Paulo\Desktop\new', $request->file('name'));
+        }else{
+            abort(500,"aqui");
+        }
     }
 }
